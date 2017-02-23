@@ -14,9 +14,13 @@
  *= require_self
  */
 
-h1 {
+a {
   font-family: 'Caveat Brush', cursive;
 }
 h3 {
   font-family: 'Caveat Brush', cursive;
+}
+
+p {
+  font-family: 'Oswald', sans-serif;
 }

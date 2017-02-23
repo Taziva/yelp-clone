@@ -82,7 +82,6 @@ feature 'restaurants' do
   scenario 'let a user edit a restaurant' do
     visit '/restaurants'
     click_link 'Edit KFC'
-    save_and_open_page
     fill_in 'Name', with: 'Kentucky Fried Chicken'
     fill_in 'Description', with: 'Deep fried goodness'
     click_button 'Update Restaurant'

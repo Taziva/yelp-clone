@@ -1,12 +1,14 @@
 - if @restaurants.any?
  - @restaurants.each do |restaurant|
   = link_to restaurant.name, restaurant_path(restaurant)
-  %h2= restaurant.description
+  %p= restaurant.description
   = link_to "Edit #{restaurant.name}", edit_restaurant_path(restaurant)
   = link_to "Delete #{restaurant.name}", restaurant_path(restaurant), method: :delete
   = link_to "Review #{restaurant.name}", new_restaurant_review_path(restaurant)
   - if restaurant.reviews.any?
-   %p= restaurant.reviews.first.thoughts
+   - restaurant.reviews.each do |review|
+    %p= review.thoughts
+    %h3= review.rating
 - else
  %h1 No restaurants yet!
 

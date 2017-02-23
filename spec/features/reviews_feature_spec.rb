@@ -1,5 +1,8 @@
 feature 'reviewing' do
-  before { Restaurant.create name: 'KFC' }
+  before do
+     @user = User.create(email: "test@test.com", password: "testtest", password_confirmation: "testtest")
+     @user.restaurants.create(name: 'KFC', description: 'beautiful')
+   end
 
   scenario 'allows users to leave a review using a form' do
      visit '/restaurants'
